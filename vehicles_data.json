@@ -1,0 +1,22 @@
+{
+    "vehicles":[
+    {
+        "number":"KA034546",
+        "time":"T17:05:10 D10112020",
+        "status":"Authorized",
+        "img": "assest/images/img1.jpg"
+    },
+    {
+        "number":"KA034647",
+        "time":"T14:25:60 D12112020",
+        "status":"Authorized",
+        "img": "assest/images/img2.jpg"
+    },
+    {
+        "number":"KA034646",
+        "time":"T15:08:18 D09112020",
+        "status":"Unauthorized",
+        "img": "assest/images/img3.jpg"
+    }
+]
+}

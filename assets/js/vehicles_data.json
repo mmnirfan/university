@@ -1,0 +1,19 @@
+{
+    "vehicles":[
+    {
+        "number":"KA03JJ4546",
+        "time":"T17:05:10 D10112020",
+        "status":"Authorized"
+    },
+    {
+        "number":"KA03LL4647",
+        "time":"T14:25:60 D12112020",
+        "status":"Authorized"
+    },
+    {
+        "number":"KA03QQ4646",
+        "time":"T15:08:18 D09112020",
+        "status":"Unauthorized"
+    }
+]
+}

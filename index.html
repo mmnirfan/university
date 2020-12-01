@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Log in | KAU</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/big/kaust-logo1.png">
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-stylesheet" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-stylesheet" rel="stylesheet" type="text/css" />
+        
+        <link rel="stylesheet" href="assets/css-kaust/kau.css">
+
+    </head>
+
+
+    <body class="authentication-bg">
+
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="text-center">
+                            <a href="index.html" class="logo">
+                                <img src="assets/images/logo-light.png" alt="" height="22" class="logo-light mx-auto">
+                               <img src="assets/images/big/kaust-logo1.png" alt="" height="128" class="logo-dark mx-auto">
+                            </a>
+                            <p class="text-muted mt-2 mb-4"></p>
+                        </div>
+                        <div class="card">
+
+                            <div class="card-body p-4">
+                                
+                                <div class="text-center mb-4">
+                                    <h4 class="text-uppercase mt-0">Sign In</h4>
+                                </div>
+                                <div id="Login"></div>
+
+                                <form action="dashboard.html" method="POST" onSubmit="return checkLoginPass();">
+
+                                    <div class="form-group mb-3">
+                                        <label for="emailaddress">Email address</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="password">Password</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
+                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-0 text-center">
+                                        <button class="btn btn-success btn-block" type="submit" id="goButton" > Log In</button>
+                                    </div>
+
+                                </form>
+
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p> <a href="pages-recoverpw.html" class="text-white ml-1"><i class="fa fa-lock mr-1"></i>Forgot your password?</a></p>
+                                <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-white ml-1"><b>Sign Up</b></a></p>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
+    
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+        <script>
+            function checkLoginPass() {
+                var login = document.getElementById("emailaddress").value;
+                var pass = document.getElementById("password").value;
+                if (login === "loginadmin@kau.com" && pass === "Admin@1234") {
+                    //window.open("index.html")
+                    return true;
+                }
+                else {
+                    alert("Wrong Email or Password !");
+                    console.log('wrong username or password!');
+                    return false;
+                }
+            };
+        </script>
+
+        <!--<script>
+            window.addEventListener("load",function (){
+            var username = document.getElementById("emailaddress");
+            var password = document.getElementById("password");
+            var submit=document.getElementById("goButton");
+            var messageContainer=document.getElementById("Login");
+            var auth =new Auth();
+            
+            submit.addEventListener("click",function ()
+            
+            {
+            
+            var username = document.getElementById("emailaddress").value;
+            var password = document.getElementById("password").value;
+            
+            });
+            auth.Login();
+            
+            
+            
+            
+            auth.Login(username,password)
+            .then(function(response){
+            const token=response.accessToken;
+            auth.login(auth.Token);
+            auth.token=token;
+            document.cookie="accessToken="+token;
+            console.log(response.accessToken);
+            })
+            .catch(function(e) {
+            console.log(e) ;
+            loginContainer.innerHTML=e.status+ " You have to be registered in order to login";
+            });
+            
+            });
+            
+            
+            function Auth(){
+            }
+            Auth.prototype.Login=function(Username, Password){
+            var root = 'index.html';
+            return $.post(root+"/auth/login",{
+            username: 'loginadmin@kau.com',
+               password: 'admin'
+            },
+            function(response) {
+            var xmlhttp = new XMLHttpRequest();
+            console.log(xmlhttp);
+            xmlhttp.open("post", "Login", true);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 401 && xmlhttp.status == 200) {
+                    loginResults();
+                }
+             };
+             console.log(response);
+             });
+            
+            
+             };
+            
+            </script>-->
+        
+    </body>
+</html>
